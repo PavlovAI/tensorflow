@@ -1,22 +1,33 @@
 # TensorFlow for AWS
 
-This is a fork of TensorFlow with support for AWS g2 instances. To install on a
-blank Ubuntu 14.04 g2 instance:
+**Play with TensorFlow on a real GPU.** This is a fork of [TensorFlow](https://github.com/tensorflow/tensorflow) with support for AWS G2 instances using CUDA 7.0. The NVIDIA GRID K520 cards these instances have use CUDA Compute 3.0 which is not currently supported by TensorFlow, but as far as I can tell they still work.
+
+## Launching from AMI (recommended)
+
+We recommend using our precompiled public AMI `ami-b4335dd4`. [Launch a g2.2xlarge instance now!](https://console.aws.amazon.com/ec2/v2/home?#LaunchInstanceWizard:ami=ami-b4335dd4)
+
+You can run the `hello_world.py` example like so:
+
+    $ source .bash_profile
+    $ python hello_world.py
+
+## Building from Source
+
+This is a fork of TensorFlow with support for AWS G2 instances using CUDA 7.0. To install on a blank Ubuntu 14.04 g2.2xlarge instance:
 
     $ curl https://raw.githubusercontent.com/pavlovml/tensorflow/master/aws/bootstrap.sh | sh
 
-When prompted, select `Keep the local version currently installed`. Upon
-reboot, run:
+When prompted, select `Keep the local version currently installed`. Upon reboot, run:
 
     $ ./install.sh
 
-When prompted, scroll to the bottom of the EULA, and select `accept > y > y > y > default (/usr/local/cuda-7.0) > y > n`.
-
-To see if it worked, run the `hello_world.py` script and check if a device for
-`gpu:0` was created:
+When prompted, scroll to the bottom of the EULA, and select `accept > y > y > y > default (/usr/local/cuda-7.0) > y > n`. Bazel will take a long time to install. To see if it worked, run `hello_world.py` and check if a device for `gpu:0` was created:
 
     $ curl -O https://raw.githubusercontent.com/pavlovml/tensorflow/master/aws/hello_world.py
+    $ source .bash_profile
     $ python hello_world.py
+    
+---
 
 # TensorFlow
 
