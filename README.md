@@ -1,4 +1,24 @@
-#TensorFlow
+# TensorFlow for AWS
+
+This is a fork of TensorFlow with support for AWS g2 instances. To install on a
+blank Ubuntu 14.04 g2 instance:
+
+    $ curl https://raw.githubusercontent.com/pavlovml/tensorflow/master/aws/bootstrap.sh | sh
+
+When prompted, select `Keep the local version currently installed`. Upon
+reboot, run:
+
+    $ ./install.sh
+
+When prompted, scroll to the bottom of the EULA, and select `accept > y > y > y > default (/usr/local/cuda-7.0) > y > n`.
+
+To see if it worked, run the `hello_world.py` script and check if a device for
+`gpu:0` was created:
+
+    $ curl -O https://raw.githubusercontent.com/pavlovml/tensorflow/master/aws/hello_world.py
+    $ python hello_world.py
+
+# TensorFlow
 
 TensorFlow is an open source software library for numerical computation using
 data flow graphs.  Nodes in the graph represent mathematical operations, while
