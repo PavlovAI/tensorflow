@@ -4,11 +4,10 @@
 
 ## Launching from AMI (recommended)
 
-We recommend using our precompiled public AMI `ami-b4335dd4`. [Launch a g2.2xlarge instance now!](https://console.aws.amazon.com/ec2/v2/home?#LaunchInstanceWizard:ami=ami-b4335dd4)
+We recommend using our precompiled public AMI `ami-7b503e1b`. [Launch a g2.2xlarge instance now!](https://console.aws.amazon.com/ec2/v2/home?#LaunchInstanceWizard:ami=ami-7b503e1b)
 
 You can run the `hello_world.py` example like so:
 
-    $ source .bash_profile
     $ python hello_world.py
 
 ## Building from Source
